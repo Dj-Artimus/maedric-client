@@ -114,7 +114,20 @@ const Footer = () => (
               />
               <button
                 type="submit"
-                className=" w-full lg:w-fit text-primary bg-neutral hover:text-accent  md:text-neutral md:bg-[#0A2640] md:hover:text-primary text-[12px] md:max-lg:text-[16px] font-figtree px-4 py-2 lg:py-1 mt-3 rounded-[1px] transition-colors duration-200 flex items-center justify-center border-[0.5px] border-neutral/80 slanted-fill-btn"
+                className="md:hidden w-full text-primary text-[12px] font-figtree px-4 py-2 mt-3 rounded-[1px] transition-colors duration-200 flex items-center justify-center border-[0.5px] border-neutral/80 slanted-fill-btn"
+                style={{
+                  "--bg-color": "#e7eaee",
+                  "--fill-color": "#d2ae6d",
+                }}
+              >
+                <span>
+                  Subscribe
+                  <FiChevronRight className="inline-block w-4 h-4 ms-[2px]" />
+                </span>
+              </button>
+              <button
+                type="submit"
+                className="hidden md:flex w-full lg:w-fit text-neutral hover:text-primary text-[12px] md:max-lg:text-[16px] font-figtree px-4 py-2 lg:py-1 mt-3 rounded-[1px] transition-colors duration-200 items-center justify-center border-[0.5px] border-neutral/80 slanted-fill-btn"
                 style={{
                   "--bg-color": "transparent",
                   "--fill-color": "#d2ae6d",
