@@ -150,9 +150,13 @@ const Footer = () => (
               <a
                 key={link.name}
                 href={link.href}
-                className="font-figtree font-semibold text-center text-[16px] text-[#303030] px-4 py-2 rounded-[2px] bg-accent hover:bg-accent/90 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                className="font-figtree font-semibold text-center text-[16px] text-[#303030] px-4 py-2 rounded-[2px] slanted-fill-btn"
+                style={{
+                  "--bg-color": "#d2ae6d",
+                  "--fill-color": "#e7eaee",
+                }}
               >
-                {link.name}
+                <span>{link.name}</span>
               </a>
             ) : (
               <div
