@@ -55,7 +55,7 @@ const InstagramGallarySection = () => {
                     alt={img.alt}
                     width={400}
                     height={400}
-                    className="object-cover w-full h-full hover:scale-105 opacity-80 bg-neutral transition-all duration-300"
+                    className="object-cover w-full h-full hover:scale-110 opacity-80 bg-neutral transition-all duration-500"
                     priority
                   />
                 </div>

@@ -3,10 +3,12 @@ import {
   PiFacebookLogoFill,
   PiGlobeHemisphereWest,
   PiInstagramLogoFill,
+  PiTelegramLogoFill,
   PiTiktokLogoFill,
   PiWallet,
   PiYoutubeLogoFill,
 } from "react-icons/pi";
+import AnimatedUnderline from "./AnimatedUnderline";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -34,9 +36,9 @@ const contactLinks = [
 const Footer = () => (
   <footer className="bg-primary text-neutral pt-12 pb-6">
     <div className="max-w-md sm:max-w-lg md:max-w-full md:w-full lg:max-w-7xl mx-auto px-4">
-      <div className="lg:block grid grid-cols-1 md:max-lg:grid-cols-2 gap-12 items-end-safe md:max-lg:px-8 ">
+      <div className="lg:block grid grid-cols-1 md:max-lg:grid-cols-2 md:gap-12 items-end-safe md:max-lg:px-8 ">
         {/* Upper sections */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 lg:gap-16 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 lg:gap-16 mb-4 md:mb-8">
           {/* About */}
           <div>
             {/* Logo and Tagline */}
@@ -62,14 +64,16 @@ const Footer = () => (
             <h4 className="font-figtree text-[20px] py-1 ms-2 mb-3 border-b-[0.5px] border-neutral w-fit">
               Explore
             </h4>
-            <ul className="font-figtree text-[16px] text-neutral/50 space-y-2">
+            <ul className="font-figtree text-[16px] text-neutral/50 space-y-3.5">
               {exploreLinks.map((link) => (
                 <li
                   key={link.name}
-                  className="flex items-center hover:text-accent"
+                  className="flex items-center hover:text-accent group w-fit"
                 >
                   <FiChevronRight className="inline-block w-6 h-6 mr-[1px]" />
-                  <a href={link.href}>{link.name}</a>
+                  <AnimatedUnderline underlineColor="accent">
+                    <a href={link.href}>{link.name}</a>
+                  </AnimatedUnderline>
                 </li>
               ))}
             </ul>
@@ -79,28 +83,30 @@ const Footer = () => (
             <h4 className="font-figtree text-[20px] py-1 ms-2 mb-3 border-b-[0.5px] border-neutral w-fit">
               Contact
             </h4>
-            <ul className="font-figtree text-[16px] text-neutral/50 space-y-2">
+            <ul className="font-figtree text-[16px] text-neutral/50 space-y-3.5">
               {contactLinks.map((link) => (
                 <li
                   key={link.name}
-                  className="flex items-center hover:text-accent"
+                  className="flex items-center hover:text-accent group w-fit"
                 >
                   <FiChevronRight className="inline-block w-6 h-6 mr-[1px]" />
-                  <a href={link.href}>{link.name}</a>
+                  <AnimatedUnderline underlineColor="accent">
+                    <a href={link.href}>{link.name}</a>
+                  </AnimatedUnderline>
                 </li>
               ))}
             </ul>
           </div>
           {/* Newsletter */}
           <div>
-            <h4 className="font-figtree text-[20px] py-1 mb-3 border-b-[0.5px] border-neutral w-fit">
+            <h4 className="font-figtree text-[20px] py-1 mb-5 md:mb-3 border-b-[0.5px] border-neutral w-fit">
               Newsletter
             </h4>
             <p className="font-figtree text-[16px] text-neutral/80 mb-2 text-justify leading-5">
               Be the first to discover new collections, stories, and exclusive
               offers.
             </p>
-            <form className="flex flex-col mt-2">
+            <form className="flex flex-col mt-4 md:mt-2">
               <input
                 type="email"
                 placeholder="sarah@yahoomail.com"
@@ -108,7 +114,11 @@ const Footer = () => (
               />
               <button
                 type="submit"
-                className=" w-full lg:w-fit bg-neutral text-primary text-[12px] md:max-lg:text-[16px] font-figtree px-4 py-2 lg:py-1 mt-3 rounded-[1px] hover:bg-accent/90 transition-colors duration-200 flex items-center justify-center"
+                className=" w-full lg:w-fit text-primary bg-neutral hover:text-accent  md:text-neutral md:bg-[#0A2640] md:hover:text-primary text-[12px] md:max-lg:text-[16px] font-figtree px-4 py-2 lg:py-1 mt-3 rounded-[1px] transition-colors duration-200 flex items-center justify-center border-[0.5px] border-neutral/80 slanted-fill-btn"
+                style={{
+                  "--bg-color": "transparent",
+                  "--fill-color": "#d2ae6d",
+                }}
               >
                 Subscribe
                 <FiChevronRight className="inline-block w-4 h-4 ms-[2px]" />
@@ -117,7 +127,7 @@ const Footer = () => (
           </div>
         </div>
         {/* Divider */}
-        <div className="md:hidden border-t border-neutral/20 flex mb-2 flex-wrap justify-between items-center" />
+        <div className="md:hidden border-t border-neutral/20 flex mb-5 flex-wrap justify-between items-center" />
         {/* Footer Links For Mobile */}
         <nav className="flex md:max-lg:mb-8 lg:hidden flex-col space-y-4">
           {navLinks.map((link) =>
@@ -149,8 +159,8 @@ const Footer = () => (
         </nav>
       </div>
 
-      <div className="bg-primary py-4">
-        {/* Social Icons For Mobile */}
+      {/* Social Icons For Mobile */}
+      <div className="bg-primary py-4 lg:hidden mx-auto flex flex-col items-center">
         <div className="flex justify-center space-x-6">
           <a
             href="https://instagram.com"
@@ -192,7 +202,7 @@ const Footer = () => (
           </a>
         </div>
         {/* Separator */}
-        <div className="mt-6 border-t border-neutral w-1/2 mx-auto"></div>
+        <div className="mt-5 mb-1 border-t border-neutral w-1/2 mx-auto max-w-[220px]"></div>
       </div>
 
       {/* Payment Logos */}
@@ -237,8 +247,8 @@ const Footer = () => (
       {/* Divider */}
       <div className="hidden lg:block border-t-[0.3px] border-neutral/20 pt-6" />
 
-      <div className="bg-primary lg:py-2 text-neutral-100 text-sm">
-        <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-between">
+      <div className="bg-primary w-full lg:-mt-4 py-2 text-neutral-100 text-sm">
+        <div className="w-full mx-auto flex flex-col lg:flex-row items-center justify-between">
           {/* Left Section */}
           <div className="hidden lg:flex items-center space-x-4">
             {/* Language Dropdown */}
@@ -258,7 +268,7 @@ const Footer = () => (
           </div>
 
           {/* Middle Section */}
-          <div className="font-figtree text-[8px] md:text-[14px] text-neutral mt-4 lg:mt-3 text-center">
+          <div className="font-figtree text-[8px] md:text-[14px] text-neutral mt-4 lg:mt-0 text-center">
             <span>
               © 2025 Maedric. All rights reserved. Crafted with care, inspired
               by legacy.
@@ -295,6 +305,13 @@ const Footer = () => (
               aria-label="YouTube"
             >
               <PiYoutubeLogoFill className="h-6 w-6" />
+            </a>
+            <a
+              href="#"
+              className="text-neutral-200 hover:text-accent transition duration-150"
+              aria-label="Telegram"
+            >
+              <PiTelegramLogoFill className="h-6 w-6" />
             </a>
           </div>
         </div>

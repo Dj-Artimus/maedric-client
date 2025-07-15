@@ -1,3 +1,4 @@
+import SlantedFillButton from "@/components/SlantedFillButton";
 import Image from "next/image";
 
 const CustomOrderCTASection = () => {
@@ -34,18 +35,20 @@ const CustomOrderCTASection = () => {
           </div>
           {/* CTA Buttons */}
           <div className="w-full mx-auto flex gap-4 flex-row justify-center mt-6">
-            <a
-              href="#"
-              className="px-6 py-3 text-[12px] lg:text-[16px] border hover:bg-accent text-white border-white hover:text-primary rounded-[2px] transition-all duration-300 text-center"
+            <SlantedFillButton
+              className="px-6 py-3 text-[12px] lg:text-[16px] border text-white border-white hover:text-primary rounded-[2px] transition-all duration-300 text-center"
+              backgroundColor="transparent"
+              fillColor="#d2ae6d"
             >
-              Request A Quote!
-            </a>
-            <a
-              href="#"
-              className="px-6 py-3 text-[12px] lg:text-[16px] border hover:bg-accent text-white border-white hover:text-primary rounded-[2px] transition-all duration-300 text-center"
+              <a href="#">Request A Quote!</a>
+            </SlantedFillButton>
+            <SlantedFillButton
+              className="px-6 py-3 text-[12px] lg:text-[16px] border text-white border-white hover:text-primary rounded-[2px] transition-all duration-300 text-center"
+              backgroundColor="transparent"
+              fillColor="#d2ae6d"
             >
-              Discover Our Legacy!
-            </a>
+              <a href="#">Discover Our Legacy!</a>
+            </SlantedFillButton>
           </div>
         </div>
       </div>

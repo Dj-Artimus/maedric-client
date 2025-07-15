@@ -4,6 +4,8 @@ import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import AnimatedUnderline from "@/components/AnimatedUnderline";
+import { useRef } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import FeaturedJewelleryCard from "../components/FeaturedJewelleryCard";
 
@@ -48,6 +50,8 @@ const featuredJewellery = [
 // This section displays featured jewellery items with a swiper for navigation.
 // It includes a title, description, and a button to view all items.
 const FeaturedJewellerySection = () => {
+  const swiperRef = useRef(null);
+
   return (
     <section className="bg-[#fff] py-12 md:py-16">
       <div className="max-w-6xl mx-auto px-4">
@@ -56,17 +60,21 @@ const FeaturedJewellerySection = () => {
           Featured Jewellery
         </h2>
         {/* Description */}
-        <p className=" font-figtree text-center text-lg text-gray-600 mb-8 max-w-4xl mx-auto">
+        <p className="font-figtree text-center text-lg text-gray-600 mb-8 max-w-4xl mx-auto">
           Discover what everyone’s loving right now — our most popular pieces,
           handpicked based on what’s trending with Maedric customers this
           season.
         </p>
-        <button className="flex w-full items-center justify-end mb-5 cursor-pointer">
-          <span className=" font-figtree font-semibold text-[16px] text-primary mx-2">
-            View All{" "}
-          </span>
-          <FiChevronRight className="w-4 h-4" />
-        </button>
+        <div className="flex w-full items-center justify-end mb-5">
+          <button className="cursor-pointer group flex items-center">
+            <span className="font-figtree font-semibold text-[16px] text-primary mx-2">
+              <AnimatedUnderline underlineColor="primary">
+                View All
+              </AnimatedUnderline>
+            </span>
+            <FiChevronRight className="w-4 h-4" />
+          </button>
+        </div>
       </div>
 
       {/* ✅ Swiper */}
@@ -98,9 +106,16 @@ const FeaturedJewellerySection = () => {
             delay: 3500,
             disableOnInteraction: false,
           }}
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
         >
           {featuredJewellery.map((item, i) => (
-            <SwiperSlide key={i}>
+            <SwiperSlide
+              key={i}
+              onMouseEnter={() => swiperRef.current?.autoplay?.stop()}
+              onMouseLeave={() => swiperRef.current?.autoplay?.start()}
+            >
               <FeaturedJewelleryCard {...item} />
             </SwiperSlide>
           ))}
@@ -108,7 +123,7 @@ const FeaturedJewellerySection = () => {
 
         <button
           aria-label="Next"
-          className="featured-next  hover:text-accent p-2"
+          className="featured-next hover:text-accent p-2"
         >
           <FiChevronRight className="w-8 h-8 font-semibold" />
         </button>

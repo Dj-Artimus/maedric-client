@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import Image from "next/image";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import AnimatedUnderline from "@/components/AnimatedUnderline";
 
 const testimonials = [
   {
@@ -58,7 +59,7 @@ const TestimonialsSection = () => {
           >
             {testimonials.map((item, idx) => (
               <SwiperSlide key={idx}>
-                <div className="flex flex-col md:flex-row items-center justify-center lg:gap-4 xl:gap-12">
+                <div className="flex flex-col md:flex-row items-center justify-center lg:gap-4 xl:gap-12 group">
                   {/* Client photo */}
                   <div className="relative md:w-[400px] lg:w-[500px]">
                     <Image
@@ -86,7 +87,9 @@ const TestimonialsSection = () => {
                       “{item.quote}”
                     </p>
                     <div className="font-figtree text-neutral md:text-primary font-semibold text-[16px] md:text-[30px] text-end">
-                      {item.name}, {item.location}
+                      <AnimatedUnderline underlineColor="accent">
+                        {item.name}, {item.location}
+                      </AnimatedUnderline>
                     </div>
                   </div>
                 </div>

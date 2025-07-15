@@ -6,6 +6,8 @@ import { GoHeart } from "react-icons/go";
 import { LuShoppingCart } from "react-icons/lu";
 import { RiInstagramFill } from "react-icons/ri";
 import { SiTiktok } from "react-icons/si";
+import AnimatedUnderline from "./AnimatedUnderline";
+import SlantedFillButton from "./SlantedFillButton";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -68,20 +70,25 @@ const Header = () => {
         >
           {navLinks.map((link) =>
             link.name === "Contact" ? (
-              <a
+              <SlantedFillButton
                 key={link.name}
-                href={link.href}
-                className="font-figtree font-bold text-[16px] text-[#303030] px-8 py-2 rounded-[2px] bg-accent hover:bg-[#D2AE6D]/90 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                className="font-figtree  font-bold text-[16px] text-[#303030] px-8 py-2 rounded-[2px] cursor-pointer -z-10"
+                backgroundColor="#d2ae6d"
+                fillColor="#e7eaee"
               >
+                <a href={link.href} className="z-50">
                 {link.name}
-              </a>
+                </a>
+              </SlantedFillButton>
             ) : (
               <a
                 key={link.name}
                 href={link.href}
-                className="font-figtree font-semibold text-[16px] text-headerText px-2 py-1 rounded hover:text-accent transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                className="font-figtree font-semibold text-[16px] text-headerText px-2 py-1 rounded hover:text-accent transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent group"
               >
-                {link.name}
+                <AnimatedUnderline underlineColor="accent">
+                  {link.name}
+                </AnimatedUnderline>
               </a>
             )
           )}

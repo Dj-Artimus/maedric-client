@@ -1,4 +1,5 @@
 "use client";
+import AnimatedUnderlineLoop from "@/components/AnimatedUnderlineLoop";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -11,22 +12,22 @@ const types = [
   {
     name: "Earrings",
     img: "/images/Type_Earings.png",
-    img2: "/images/Type_Earings2.png", // Placeholder for second image
+    img2: "/images/Type_Earings.png", // Placeholder for second image
   },
   {
     name: "Necklace",
     img: "/images/Type_Necklace.png",
-    img2: "/images/Type_Necklace2.png", // Placeholder for second image
+    img2: "/images/Type_Necklace.png", // Placeholder for second image
   },
   {
     name: "Bracelet",
     img: "/images/Type_Bracelet.png",
-    img2: "/images/Type_Bracelet2.png", // Placeholder for second image
+    img2: "/images/Type_Bracelet.png", // Placeholder for second image
   },
   {
     name: "Brooch",
     img: "/images/Type_Brooch.png",
-    img2: "/images/Type_Brooch2.png", // Placeholder for second image
+    img2: "/images/Type_Brooch.png", // Placeholder for second image
   },
 ];
 
@@ -43,7 +44,7 @@ const ShopByTypeSection = () => {
           {types.map((type, index) => (
             <div
               key={type.name}
-              className="flex flex-col items-center cursor-pointer mb-2"
+              className="flex flex-col items-center cursor-pointer mb-2 group"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
@@ -58,7 +59,11 @@ const ShopByTypeSection = () => {
                 />
               </div>
               <span className="font-figtree text-secondary text-[14px] xsm:text-[16px] sm:text-[20px] font-semibold md:mt-2">
-                {type.name}
+                {/* <AnimatedUnderline href="#" underlineColor="accent"> */}
+                <AnimatedUnderlineLoop href="#" underlineColor="accent">
+                  {type.name}
+                </AnimatedUnderlineLoop>
+                {/* </AnimatedUnderline> */}
               </span>
             </div>
           ))}

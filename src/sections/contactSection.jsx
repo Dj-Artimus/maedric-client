@@ -1,3 +1,4 @@
+import AnimatedUnderline from "@/components/AnimatedUnderline";
 import Image from "next/image";
 
 const ContactSection = () => (
@@ -14,25 +15,50 @@ const ContactSection = () => (
           to create something truly personal and timeless.
         </p>
         <div className="max-w-3xl mx-auto flex justify-center gap-2 md:gap-4 text-primary">
-          <button className="font-figtree text-[16px] border border-primary rounded-[1px] w-full py-2 bg-white hover:bg-primary hover:text-white transition-colors duration-200">
-            Bridal
+          <button
+            className="font-figtree text-[16px] border border-primary rounded-[1px] w-full py-2 hover:text-white cursor-pointer slanted-fill-btn"
+            style={{
+              "--bg-color": "white",
+              "--fill-color": "#051e33",
+            }}
+          >
+            <span>Bridal</span>
           </button>
-          <button className="font-figtree text-[16px] border border-primary rounded-[1px] w-full py-2 bg-white hover:bg-primary hover:text-white transition-colors duration-200">
-            Boutique
+          <button
+            className="font-figtree text-[16px] border border-primary rounded-[1px] w-full py-2 hover:text-white cursor-pointer slanted-fill-btn"
+            style={{
+              "--bg-color": "white",
+              "--fill-color": "#051e33",
+            }}
+          >
+            <span>Boutique</span>
           </button>
-          <button className="font-figtree text-[16px] border border-primary rounded-[1px] w-full py-2 bg-white hover:bg-primary hover:text-white transition-colors duration-200">
-            Gemstone
+          <button
+            className="font-figtree text-[16px] border border-primary rounded-[1px] w-full py-2 hover:text-white cursor-pointer slanted-fill-btn"
+            style={{
+              "--bg-color": "white",
+              "--fill-color": "#051e33",
+            }}
+          >
+            <span>Gemstone</span>
           </button>
         </div>
       </div>
       {/* Two Column Layout */}
-      <div className="flex flex-col md:flex-row gap-12 items-center">
+      <div className="flex flex-col md:flex-row gap-12 items-center group">
         {/* Left: Text */}
         <div className="flex-1 grow min-w-[300px]">
           <h3 className="font-quiche text-[32px] text-secondary mb-2 border-b border-[#E7EAEE] pb-2">
-            Hi There, Isaiah Here.
+            Hi There,{" "}
+            <AnimatedUnderline underlineColor="accent">
+              Isaiah Here.
+            </AnimatedUnderline>
             <br />
-            I’m The Artisan Behind Your Story
+            I’m{" "}
+            <AnimatedUnderline underlineColor="accent">
+              The Artisan
+            </AnimatedUnderline>{" "}
+            behind Your Story
           </h3>
           <p className="font-figtree text-[16px] lg:text-[18px] text-primary mb-4 leading-6">
             I am the founder and the principal designer of Maedric, working

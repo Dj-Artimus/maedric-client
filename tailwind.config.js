@@ -22,6 +22,19 @@ export const theme = {
             neutral: "#E7EAEE",
             headerText: "#F3F6FA",
         },
+        keyframes: {
+            'slide-away': {
+                '0%': { width: '100%', left: '0%' },
+                '49%': { width: '0%', left: '0%' },
+                '50%': { width: '0%', left: '0%' },
+                '51%': { width: '0%', left: '100%' },
+                '52%': { width: '0%', left: '0%' },
+                '100%': { width: '100%', left: '0%' },
+            },
+        },
+        animation: {
+            'slide-away': 'slide-away 0.6s forwards',
+        },
     },
 };
 export const plugins = []; 

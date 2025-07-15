@@ -5,6 +5,7 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import AnimatedUnderline from "@/components/AnimatedUnderline";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const steps = [
@@ -60,13 +61,15 @@ const StepsSection = () => {
               key={step.number}
               className="border border-primary p-6 text-left"
             >
-              <div className="flex items-center xl:px-3">
+              <div className="flex items-center xl:px-3 group cursor-pointer">
                 <span className="text-primary font-proxima text-[76px] mr-4">
                   {step.number}
                 </span>
                 <div className="text-center">
                   <h3 className="font-figtree font-semibold text-[18px] text-primary mb-2">
-                    {step.title}
+                    <AnimatedUnderline underlineColor="accent">
+                      {step.title}
+                    </AnimatedUnderline>
                   </h3>
                   <p className="font-figtree text-secondary text-[12px] leading-relaxed">
                     {step.text}

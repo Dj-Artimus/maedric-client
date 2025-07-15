@@ -1,3 +1,5 @@
+"use client";
+import SlantedFillButton from "@/components/SlantedFillButton";
 import { FaWhatsapp } from "react-icons/fa";
 
 const HeroSection = () => (
@@ -11,21 +13,25 @@ const HeroSection = () => (
       playsInline
       preload="auto"
     />
-    <div className="sm:absolute bottom-4 left-0 z-10 flex flex-col items-start sm:max-lg2:items-center justify-center text-left px-8 md:px-24 py-6 sm:py-12 w-full">
+    <div className="sm:absolute bottom-6 left-0 z-10 flex flex-col items-start sm:max-lg2:items-center justify-center text-left px-8 md:px-24 py-6 sm:py-12 w-full">
       {/* Hero text content on Desktop */}
-      <h1 className="hidden sm:block font-figtree font-medium text-[40px] md:text-[48px] text-white drop-shadow-lg mb-6">
+      <h1 className="hidden sm:block bgac font-figtree font-medium text-[40px] md:text-[48px] text-white drop-shadow-lg mb-6">
         Want one of your own?
       </h1>
-      <button className="hidden sm:block backdrop-blur-lg rounded-[2px] border border-white text-white font-figtree font-medium text-[16px] px-[102px] py-3 transition hover:bg-white/10 mb-2 cursor-pointer">
+      <SlantedFillButton
+        className="relative hidden sm:block backdrop-blur-lg rounded-[2px] border border-white text-white font-figtree font-medium text-[16px] py-3 px-[104px] transition hover:text-primary cursor-pointer hover:backdrop-blur-none "
+        backgroundColor="transparent"
+        fillColor="#d2ae6d"
+      >
         Explore Our Collections
-      </button>
+      </SlantedFillButton>
 
       {/* Hero text content on Mobile */}
       <h1 className="sm:hidden font-figtree font-medium text-[14px] text-white text-center drop-shadow-lg mb-6">
         Explore exquisite gemstones & jewellery, crafted to empower & elevate
         your legacy with every radiant detail.
       </h1>
-      <button className="w-full sm:hidden backdrop-blur-lg rounded-[2px] border border-white text-white font-figtree font-medium text-[16px] py-3 transition hover:bg-white/10 mb-2 cursor-pointer">
+      <button className="w-full sm:hidden backdrop-blur-lg rounded-[2px] border border-white text-white font-figtree font-medium text-[16px] py-3 hover:bg-white/10 mb-2 cursor-pointer transition-colors">
         Explore All Collections
       </button>
     </div>

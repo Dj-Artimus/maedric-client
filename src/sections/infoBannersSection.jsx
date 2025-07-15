@@ -1,3 +1,4 @@
+import SlantedFillButton from "@/components/SlantedFillButton";
 import Image from "next/image";
 
 const banners = [
@@ -30,21 +31,22 @@ const InfoBannersSection = () => (
               src={banner.img}
               alt={banner.alt}
               fill
-              className="object-cover object-center w-full h-full transition-transform duration-300 group-hover:scale-105"
+              className="object-cover object-center w-full h-full transition-transform duration-500 group-hover:scale-105 sca"
               priority
             />
-            <div className="absolute inset-0 bg-[#fff]/40 md:bg-[#fff]/30 group-hover:bg-[#fff]/50 transition-colors duration-200" />
+            <div className="absolute inset-0 bg-[#fff]/40 md:bg-[#fff]/30 group-hover:bg-[#fff]/20 transition-colors duration-200" />
             <div className="relative z-10 flex flex-col justify-between min-h-[246px] md:min-h-[320px] lg2:min-h-[418px] px-6 py-8 md:px-8">
               <h3 className="font-quiche text-[21px] md:text-[32px] lg:text-[36px] text-primary mb-4 leading-tight whitespace-pre-line">
                 {banner.title}
               </h3>
-              <a
-                href={banner.href}
-                className="inline-block w-fit font-figtree font-semibold text-[12px] md:text-[16px] text-primary border border-primary rounded-[2px] px-6 py-2 mt-2 hover:bg-accent hover:text-white hover:border-accent focus:outline-none focus:ring-2 focus:ring-accent transition-colors duration-200"
+              <SlantedFillButton
+                className="inline-block w-fit font-figtree font-semibold text-[12px] md:text-[16px] text-primary border border-primary rounded-[2px] px-6 py-2"
+                backgroundColor="transparent"
+                fillColor="#d2ae6d"
                 tabIndex={0}
               >
-                {banner.button}
-              </a>
+                <a href={banner.href}>{banner.button}</a>
+              </SlantedFillButton>
             </div>
           </div>
         ))}
