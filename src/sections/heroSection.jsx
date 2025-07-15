@@ -37,15 +37,22 @@ const HeroSection = () => (
     </div>
 
     {/* WhatsApp Floating Icon */}
-    <a
-      href="https://wa.me/6591234567"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="fixed bottom-30 right-0 z-50 bg-primary rounded-l-md p-3 pe-2.5 shadow-lg hover:bg-accent transition-colors duration-200"
-      aria-label="Chat on WhatsApp"
-    >
-      <FaWhatsapp className="w-7 h-7 text-white" />
-    </a>
+    <div className="fixed bottom-30 right-0 z-50 rounded-l-lg overflow-hidden">
+      <SlantedFillButton
+        className=" p-3 pe-2.5 rounded-l-md shadow-lg text-white"
+        backgroundColor="#051e33"
+        fillColor="#d2ae6d"
+      >
+        <a
+          href="https://wa.me/6591234567"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat on WhatsApp"
+        >
+          <FaWhatsapp className="w-7 h-7" />
+        </a>
+      </SlantedFillButton>
+    </div>
   </section>
 );
 

@@ -120,8 +120,10 @@ const Footer = () => (
                   "--fill-color": "#d2ae6d",
                 }}
               >
-                Subscribe
-                <FiChevronRight className="inline-block w-4 h-4 ms-[2px]" />
+                <span>
+                  Subscribe
+                  <FiChevronRight className="inline-block w-4 h-4 ms-[2px]" />
+                </span>
               </button>
             </form>
           </div>
