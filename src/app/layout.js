@@ -1,11 +1,18 @@
-import "./globals.css";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import RouteLoader from "@/components/RouteLoader";
 import Head from "next/head";
+import "./globals.css";
 
 export const metadata = {
-  title: "MAEDRIC | Home",
+  title: "Maedric | Gemstones & Jewellery",
   description: "MAEDRIC's vision is to bring an appreciation of quality to new collectors and make the beauty of coloured stones more accessible to collectors and jewellery lovers worldwide.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-32x32.png",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     title: "MAEDRIC",
     description: "MAEDRIC's vision is to bring an appreciation of quality to new collectors and make the beauty of coloured stones more accessible to collectors and jewellery lovers worldwide.",
@@ -15,7 +22,7 @@ export const metadata = {
         url: "https://maedric.com/maedricImg.png",
         width: 1200,
         height: 630,
-        alt: "MAEDRIC",
+        alt: "Maedric Gemstones & Jewellery",
       },
     ],
     type: "website",
@@ -33,6 +40,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Head >
         <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#788088" />
         <meta name="description" content={metadata.description} />
@@ -73,6 +82,7 @@ export default function RootLayout({ children }) {
         />
       </Head>
       <body>
+        <RouteLoader />
         <Header />
         <main>{children}</main>
         <Footer />

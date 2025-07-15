@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FiChevronDown, FiChevronRight } from "react-icons/fi";
 import {
   PiFacebookLogoFill,
@@ -72,7 +73,7 @@ const Footer = () => (
                 >
                   <FiChevronRight className="inline-block w-6 h-6 mr-[1px]" />
                   <AnimatedUnderline underlineColor="accent">
-                    <a href={link.href}>{link.name}</a>
+                    <Link href={link.href}>{link.name}</Link>
                   </AnimatedUnderline>
                 </li>
               ))}
@@ -91,7 +92,7 @@ const Footer = () => (
                 >
                   <FiChevronRight className="inline-block w-6 h-6 mr-[1px]" />
                   <AnimatedUnderline underlineColor="accent">
-                    <a href={link.href}>{link.name}</a>
+                    <Link href={link.href}>{link.name}</Link>
                   </AnimatedUnderline>
                 </li>
               ))}
@@ -147,7 +148,7 @@ const Footer = () => (
         <nav className="flex md:max-lg:mb-8 lg:hidden flex-col space-y-4">
           {navLinks.map((link) =>
             link.name === "Contact" ? (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 className="font-figtree font-semibold text-center text-[16px] text-[#303030] px-4 py-2 rounded-[2px] slanted-fill-btn"
@@ -157,18 +158,20 @@ const Footer = () => (
                 }}
               >
                 <span>{link.name}</span>
-              </a>
+              </Link>
             ) : (
               <div
                 key={link.name}
-                className="flex justify-between items-center"
+                className="flex justify-between items-center group"
               >
-                <a
+                <Link
                   href={link.href}
                   className="font-figtree font-semibold text-[16px] text-neutral hover:text-accent transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                 >
-                  {link.name}
-                </a>
+                  <AnimatedUnderline underlineColor="accent">
+                    {link.name}
+                  </AnimatedUnderline>
+                </Link>
                 {(link.name === "Gemstones" || link.name === "Jewellery") && (
                   <FiChevronRight className="w-5 h-5 text-neutral" />
                 )}
@@ -178,47 +181,50 @@ const Footer = () => (
         </nav>
       </div>
 
-      {/* Social Icons For Mobile */}
       <div className="bg-primary py-4 lg:hidden mx-auto flex flex-col items-center">
+        {/* Social Icons For Mobile */}
         <div className="flex justify-center space-x-6">
-          <a
+          <Link
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
+            className="hover:text-accent"
           >
             <PiInstagramLogoFill className="h-6 w-6" />
-          </a>
-          <a
+          </Link>
+          <Link
             href="https://tiktok.com"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="TikTok"
+            className="hover:text-accent"
           >
             <PiTiktokLogoFill className="h-6 w-6" />
-          </a>
-          <a
+          </Link>
+          <Link
             href="https://youtube.com"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="YouTube"
+            className="hover:text-accent"
           >
             <PiYoutubeLogoFill className="h-6 w-6" />
-          </a>
+          </Link>
         </div>
         {/* Footer Links */}
         <div className="mt-4 flex justify-center text-neutral/50 text-sm space-x-4 text-[12px]">
-          <a href="/about-us" className="hover:text-accent">
+          <Link href="/about-us" className="hover:text-accent">
             About Us
-          </a>
+          </Link>
           <span>|</span>
-          <a href="/terms-and-conditions" className="hover:text-accent">
+          <Link href="/terms-and-conditions" className="hover:text-accent">
             Terms & Conditions
-          </a>
+          </Link>
           <span>|</span>
-          <a href="/privacy-policy" className="hover:text-accent">
+          <Link href="/privacy-policy" className="hover:text-accent">
             Privacy Policy
-          </a>
+          </Link>
         </div>
         {/* Separator */}
         <div className="mt-5 mb-1 border-t border-neutral w-1/2 mx-auto max-w-[220px]"></div>
@@ -297,41 +303,41 @@ const Footer = () => (
           {/* Right Section */}
           {/* Social Media Icons For Desktop */}
           <div className="hidden lg:flex space-x-4 mt-3 md:mt-0">
-            <a
+            <Link
               href="#"
               className="text-neutral hover:text-accent transition duration-150"
               aria-label="Facebook"
             >
               <PiFacebookLogoFill className="h-6 w-6" />
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="text-neutral-200 hover:text-accent transition duration-150"
               aria-label="Instagram"
             >
               <PiInstagramLogoFill className="h-6 w-6" />
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="text-neutral-200 hover:text-accent transition duration-150"
               aria-label="TikTok"
             >
               <PiTiktokLogoFill className="h-6 w-6" />
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="text-neutral-200 hover:text-accent transition duration-150"
               aria-label="YouTube"
             >
               <PiYoutubeLogoFill className="h-6 w-6" />
-            </a>
-            <a
+            </Link>
+            <Link
               href="#"
               className="text-neutral-200 hover:text-accent transition duration-150"
               aria-label="Telegram"
             >
               <PiTelegramLogoFill className="h-6 w-6" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

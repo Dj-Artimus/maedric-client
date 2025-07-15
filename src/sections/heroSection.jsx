@@ -22,6 +22,8 @@ const HeroSection = () => (
         className="relative hidden sm:block backdrop-blur-lg rounded-[2px] border border-white text-white font-figtree font-medium text-[16px] py-3 px-[104px] transition hover:text-primary cursor-pointer hover:backdrop-blur-none "
         backgroundColor="transparent"
         fillColor="#d2ae6d"
+        href="#"
+        ariaLabel="Explore Our Collections"
       >
         Explore Our Collections
       </SlantedFillButton>
@@ -31,8 +33,14 @@ const HeroSection = () => (
         Explore exquisite gemstones & jewellery, crafted to empower & elevate
         your legacy with every radiant detail.
       </h1>
-      <button className="w-full sm:hidden backdrop-blur-lg rounded-[2px] border border-white text-white font-figtree font-medium text-[16px] py-3 hover:bg-white/10 mb-2 cursor-pointer transition-colors">
-        Explore All Collections
+      <button
+        className="w-full sm:hidden backdrop-blur-lg rounded-[2px] border border-white text-white font-figtree font-medium text-[16px] py-3 hover:bg-white/10 mb-2 cursor-pointer transition-colors slanted-fill-btn"
+        style={{
+          "--bg-color": "transparent",
+          "--fill-color": "#d2ae6d",
+        }}
+      >
+        <span>Explore All Collections</span>
       </button>
     </div>
 
@@ -42,15 +50,12 @@ const HeroSection = () => (
         className=" p-3 pe-2.5 rounded-l-md shadow-lg text-white"
         backgroundColor="#051e33"
         fillColor="#d2ae6d"
+        href="https://wa.me/6591234567"
+        aria-label="Chat on WhatsApp"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        <a
-          href="https://wa.me/6591234567"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Chat on WhatsApp"
-        >
-          <FaWhatsapp className="w-7 h-7" />
-        </a>
+        <FaWhatsapp className="w-7 h-7" />
       </SlantedFillButton>
     </div>
   </section>

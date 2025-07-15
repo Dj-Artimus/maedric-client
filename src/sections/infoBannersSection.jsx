@@ -44,8 +44,10 @@ const InfoBannersSection = () => (
                 backgroundColor="transparent"
                 fillColor="#d2ae6d"
                 tabIndex={0}
+                href={banner.href}
+                ariaLabel={banner.button}
               >
-                <a href={banner.href}>{banner.button}</a>
+                <span>{banner.button}</span>
               </SlantedFillButton>
             </div>
           </div>

@@ -9,7 +9,7 @@ import StepsSection from '../sections/stepsSection';
 import TestimonialsSection from '../sections/testimonialsSection';
 
 export const metadata = {
-  title: "Maedric | Rare Gemstones & Fine Jewellery",
+  title: "MAEDRIC | Home",
   description: "Discover Maedric’s exclusive gemstone collections, unique jewellery designs and timeless craftsmanship.",
   openGraph: {
     title: "Maedric | Rare Gemstones & Fine Jewellery",

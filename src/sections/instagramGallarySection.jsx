@@ -55,18 +55,18 @@ const InstagramGallarySection = () => {
                     alt={img.alt}
                     width={400}
                     height={400}
-                    className="object-cover w-full h-full hover:scale-110 opacity-80 bg-neutral transition-all duration-500"
+                    className="object-cover w-full h-full hover:scale-110 opacity-80 bg-neutral transition-all duration-700"
                     priority
                   />
                 </div>
               )
           )}
           {/* Last cell: Follow Us block */}
-          <div className="h-full min-h-[200px] sm:min-h-14 max-h-[400px] col-span-2 flex flex-col items-center justify-center bg-primary text-center cursor-pointer">
-            <span className="font-figtree text-white text-[20px] mb-2">
+          <div className="h-full min-h-[200px] sm:min-h-14 max-h-[400px] col-span-2 flex flex-col items-center justify-center bg-primary text-center cursor-pointer group">
+            <span className="font-figtree text-white text-[20px] mb-2 group-hover:scale-150 transition-transform duration-700">
               Follow Us
             </span>
-            <span className="font-figtree text-accent text-[24px] font-semibold">
+            <span className="font-figtree text-accent text-[24px] font-semibold group-hover:scale-150 transition-transform duration-700">
               @Maedric
             </span>
           </div>

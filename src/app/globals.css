@@ -113,6 +113,16 @@
   }
 }
 
+/* Override NProgress bar color */
+#nprogress .bar {
+  background: #d2ae6d; /* 👈 Your custom gold color */
+}
+
+/* Optional: if you want the glow peg to match */
+#nprogress .peg {
+  box-shadow: 0 0 10px #d2ae6d, 0 0 5px #d2ae6d;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);

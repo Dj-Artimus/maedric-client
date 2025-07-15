@@ -1,10 +1,16 @@
 "use client";
 
+import Link from "next/link";
+
 const SlantedFillButton = ({
   children,
   className,
   backgroundColor = "transparent",
   fillColor = "#d2ae6d",
+  href = "#",
+  ariaLabel = "Button",
+  rel = "noopener noreferrer",
+  target = "_self",
 }) => {
   const styleVars = {
     "--bg-color": backgroundColor,
@@ -18,7 +24,15 @@ const SlantedFillButton = ({
         ...styleVars,
       }}
     >
-      <button className={`${className}`}>{children}</button>
+      <Link
+        href={href}
+        aria-label={ariaLabel}
+        rel={rel}
+        target={target}
+        className={`block ${className}`}
+      >
+        {children}
+      </Link>
     </div>
   );
 };

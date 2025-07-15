@@ -5,9 +5,9 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import AnimatedUnderline from "@/components/AnimatedUnderline";
 import Image from "next/image";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import AnimatedUnderline from "@/components/AnimatedUnderline";
 
 const testimonials = [
   {
@@ -82,7 +82,7 @@ const TestimonialsSection = () => {
                   </div>
 
                   {/* Quote */}
-                  <div className=" w-full md:max-w-sm lg:max-w-xl text-center md:text-left md:px-4 mt-5">
+                  <div className=" w-full md:max-w-sm lg:max-w-xl text-center md:text-left md:px-4 mt-5 pb-1">
                     <p className="font-figtree text-secondary text-[12px] md:text-[16px] lg:text-[20px] mb-6 leading-relaxed text-justify md:ps-24 lg:ps-24 xl:ps-32 md:pe-0">
                       “{item.quote}”
                     </p>

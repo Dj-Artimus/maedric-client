@@ -1,5 +1,6 @@
 import SlantedFillButton from "@/components/SlantedFillButton";
 import Image from "next/image";
+import Link from "next/link";
 
 const CustomOrderCTASection = () => {
   return (
@@ -39,15 +40,17 @@ const CustomOrderCTASection = () => {
               className="px-6 py-3 text-[12px] lg:text-[16px] border text-white border-white hover:text-primary rounded-[2px] transition-all duration-300 text-center"
               backgroundColor="transparent"
               fillColor="#d2ae6d"
+              href="#"
             >
-              <a href="#">Request A Quote!</a>
+              <span>Request A Quote!</span>
             </SlantedFillButton>
             <SlantedFillButton
               className="px-6 py-3 text-[12px] lg:text-[16px] border text-white border-white hover:text-primary rounded-[2px] transition-all duration-300 text-center"
               backgroundColor="transparent"
               fillColor="#d2ae6d"
+              href="#"
             >
-              <a href="#">Discover Our Legacy!</a>
+              <span>Discover Our Legacy!</span>
             </SlantedFillButton>
           </div>
         </div>
