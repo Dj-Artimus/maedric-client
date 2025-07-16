@@ -1,9 +1,31 @@
+/**
+ * --------------------------------------------------------
+ * ✏️ Author: DjArtimus
+ * 📅 Created: 11-07-2025 - 14-07-2025
+ *
+ * 📌 Description:
+ *   HeroSection displays the main landing section with video background, hero text, and WhatsApp floating button.
+ * --------------------------------------------------------
+ */
+
 "use client";
 import SlantedFillButton from "@/components/SlantedFillButton";
 import { FaWhatsapp } from "react-icons/fa";
 
+/**
+ * HeroSection
+ *
+ * Renders the main hero section with video background, responsive text content, and call-to-action buttons.
+ * Features different layouts for mobile and desktop with floating WhatsApp button.
+ *
+ * @returns {JSX.Element} The hero section with video background and content.
+ *
+ * @example
+ * <HeroSection />
+ */
 const HeroSection = () => (
   <section className="w-full md:h-[90vh] lg:h-[100vh] bg-primary/60 flex flex-col md:flex-row items-center justify-start relative overflow-hidden">
+    {/* Background video */}
     <video
       className="md:absolute aspect-square md:aspect-auto inset-0 w-full h-full object-cover z-0"
       src="/videos/Hero.mp4"
@@ -13,8 +35,10 @@ const HeroSection = () => (
       playsInline
       preload="auto"
     />
+    
+    {/* Hero content container */}
     <div className="sm:absolute bottom-6 left-0 z-10 flex flex-col items-start sm:max-lg2:items-center justify-center text-left px-8 md:px-24 py-6 sm:py-12 w-full">
-      {/* Hero text content on Desktop */}
+      {/* Hero text content - Desktop version */}
       <h1 className="hidden sm:block bgac font-figtree font-medium text-[40px] md:text-[48px] text-white drop-shadow-lg mb-6">
         Want one of your own?
       </h1>
@@ -28,7 +52,7 @@ const HeroSection = () => (
         Explore Our Collections
       </SlantedFillButton>
 
-      {/* Hero text content on Mobile */}
+      {/* Hero text content - Mobile version */}
       <h1 className="sm:hidden font-figtree font-medium text-[14px] text-white text-center drop-shadow-lg mb-6">
         Explore exquisite gemstones & jewellery, crafted to empower & elevate
         your legacy with every radiant detail.

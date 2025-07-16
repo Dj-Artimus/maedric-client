@@ -1,4 +1,15 @@
+/**
+ * --------------------------------------------------------
+ * ✏️ Author: DjArtimus
+ * 📅 Created: 11-07-2025 - 14-07-2025
+ *
+ * 📌 Description:
+ *   Header is the main navigation bar for the Maedric site, including logo, navigation links, and mobile menu.
+ * --------------------------------------------------------
+ */
+
 "use client";
+
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -11,6 +22,7 @@ import { SiTiktok } from "react-icons/si";
 import AnimatedUnderline from "./AnimatedUnderline";
 import SlantedFillButton from "./SlantedFillButton";
 
+// Navigation links for the header
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Gemstones", href: "/gemstones" },
@@ -20,6 +32,13 @@ const navLinks = [
   { name: "Contact", href: "/contact" },
 ];
 
+/**
+ * useBodyScrollLock
+ *
+ * Locks the body scroll when the mobile menu is open.
+ *
+ * @param {boolean} lock - Whether to lock the scroll.
+ */
 function useBodyScrollLock(lock = false) {
   const scrollY = useRef(0);
 
@@ -52,6 +71,16 @@ function useBodyScrollLock(lock = false) {
   }, [lock]);
 }
 
+/**
+ * Header
+ *
+ * Renders the main navigation bar with logo, navigation links, and mobile menu.
+ *
+ * @returns {JSX.Element} The header component for the Maedric site.
+ *
+ * @example
+ * <Header />
+ */
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false); // To track scrolling
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false); // To manage mobile nav menu state
@@ -70,6 +99,10 @@ const Header = () => {
   const router = useRouter();
   const pathname = usePathname();
 
+  /**
+   * Handles logo click: scrolls to top if on home, otherwise navigates home.
+   * @param {Event} e - The click event.
+   */
   const handleClick = (e) => {
     if (pathname === "/") {
       e.preventDefault();
@@ -150,24 +183,28 @@ const Header = () => {
             isScrolled ? "absolute lg:static lg:translate-y-0" : "absolute"
           } right-4 top-6 sm:right-8 sm:top-1/2 xl:top-11 sm:-translate-y-1/2 xl:translate-y-0 flex items-center space-x-3 lg2:max-xl:space-x-4 sm:space-x-7 transition-all duration-300`}
         >
+          {/* Search Button */}
           <button
             aria-label="Search"
             className="hidden sm:block  focus:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors duration-200 p-1 rounded cursor-pointer"
           >
             <FiSearch className="w-6 h-6 text-headerText hover:text-accent" />
           </button>
+          {/* Wishlist Button */}
           <button
             aria-label="Wishlist"
             className=" focus:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors duration-200 p-1 rounded cursor-pointer"
           >
             <GoHeart className="w-6 h-6 text-headerText hover:text-accent" />
           </button>
+          {/* User Button */}
           <button
             aria-label="User"
             className="hidden sm:block focus:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors duration-200 p-1 rounded cursor-pointer"
           >
             <AiOutlineUser className="w-6 h-6 text-headerText hover:text-accent" />
           </button>
+          {/* Cart Button */}
           <button
             aria-label="Cart"
             className="relative focus:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors duration-200 p-1 rounded cursor-pointer"

@@ -1,7 +1,36 @@
+/**
+ * --------------------------------------------------------
+ * ✏️ Author: DjArtimus
+ * 📅 Created: 11-07-2025 - 14-07-2025
+ *
+ * 📌 Description:
+ *   SlantedFillButton is a styled button component with a slanted fill animation, supporting custom colors and links.
+ * --------------------------------------------------------
+ */
+
 "use client";
 
 import Link from "next/link";
 
+/**
+ * SlantedFillButton
+ *
+ * Renders a button with a slanted fill animation, supporting custom colors and links.
+ *
+ * @param {object} props
+ * @param {React.ReactNode} props.children - The content to display inside the button.
+ * @param {string} [props.className] - Additional class names for styling.
+ * @param {string} [props.backgroundColor="transparent"] - The background color.
+ * @param {string} [props.fillColor="#d2ae6d"] - The fill color for the animation.
+ * @param {string} [props.href="#"] - The link URL.
+ * @param {string} [props.ariaLabel="Button"] - The aria-label for accessibility.
+ * @param {string} [props.rel="noopener noreferrer"] - The rel attribute for the link.
+ * @param {string} [props.target="_self"] - The target attribute for the link.
+ * @returns {JSX.Element} The slanted fill button component.
+ *
+ * @example
+ * <SlantedFillButton href="/about" backgroundColor="#fff" fillColor="#000">About</SlantedFillButton>
+ */
 const SlantedFillButton = ({
   children,
   className,

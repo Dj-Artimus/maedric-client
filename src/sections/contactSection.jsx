@@ -1,19 +1,45 @@
+/**
+ * --------------------------------------------------------
+ * ✏️ Author: DjArtimus
+ * 📅 Created: 11-07-2025 - 14-07-2025
+ *
+ * 📌 Description:
+ *   ContactSection displays a contact form with category tabs and founder information, including an image and personal message.
+ * --------------------------------------------------------
+ */
+
 import AnimatedUnderline from "@/components/AnimatedUnderline";
 import Image from "next/image";
 
+/**
+ * ContactSection
+ *
+ * Renders a contact section with category tabs, founder introduction, and contact information.
+ * Hidden on mobile devices (lg:block).
+ *
+ * @returns {JSX.Element} The contact section with two-column layout.
+ *
+ * @example
+ * <ContactSection />
+ */
 const ContactSection = () => (
   <section className="bg-white py-12 md:py-16 hidden lg:block">
     <div className="max-w-5xl xl:max-w-6xl mx-auto px-4">
       {/* Top Heading and Tabs */}
       <div className="mb-10">
+        {/* Main heading */}
         <h2 className="font-quiche text-[28px] md:text-[36px] text-primary text-center mb-2">
-          Let’s Begin <span className="font-normal">–</span> Your Jewellery,
+          Let's Begin <span className="font-normal">–</span> Your Jewellery,
           Your Way
         </h2>
+
+        {/* Description text */}
         <p className="font-figtree text-[20px] text-secondary text-center mb-6 max-w-2xl mx-auto">
-          Tell us a bit about your vision, and we’ll guide you through each step
+          Tell us a bit about your vision, and we'll guide you through each step
           to create something truly personal and timeless.
         </p>
+
+        {/* Category selection tabs */}
         <div className="max-w-3xl mx-auto flex justify-center gap-2 md:gap-4 text-primary">
           <button
             className="font-figtree text-[16px] border border-primary rounded-[1px] w-full py-2 hover:text-white cursor-pointer slanted-fill-btn"
@@ -44,22 +70,26 @@ const ContactSection = () => (
           </button>
         </div>
       </div>
+
       {/* Two Column Layout */}
       <div className="flex flex-col md:flex-row gap-12 items-center group">
-        {/* Left: Text */}
+        {/* Left: Text content */}
         <div className="flex-1 grow min-w-[300px]">
+          {/* Founder introduction with animated underlines */}
           <h3 className="font-quiche text-[32px] text-secondary mb-2 border-b border-[#E7EAEE] pb-2">
             Hi There,{" "}
             <AnimatedUnderline underlineColor="accent">
               Isaiah Here.
             </AnimatedUnderline>
             <br />
-            I’m{" "}
+            I'm{" "}
             <AnimatedUnderline underlineColor="accent">
               The Artisan
             </AnimatedUnderline>{" "}
             behind Your Story
           </h3>
+
+          {/* Founder's story paragraphs */}
           <p className="font-figtree text-[16px] lg:text-[18px] text-primary mb-4 leading-6">
             I am the founder and the principal designer of Maedric, working
             closely with you from initial sketch to final polish to provide a
@@ -87,7 +117,8 @@ const ContactSection = () => (
             creations. We would love to learn more about you.
           </p>
         </div>
-        {/* Right: Image */}
+
+        {/* Right: Founder image */}
         <div className="flex-1 shrink flex justify-center md:justify-end">
           <div className="w-full h-full aspect-auto max-w-[584px] max-h-[580px] relative rounded-[2px] overflow-hidden bg-[#F7F8FA] shadow-md">
             <Image

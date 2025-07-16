@@ -1,3 +1,13 @@
+/**
+ * --------------------------------------------------------
+ * ✏️ Author: DjArtimus
+ * 📅 Created: 11-07-2025 - 14-07-2025
+ *
+ * 📌 Description:
+ *   Footer is the main site footer component, providing navigation, contact, newsletter, and social links for Maedric.
+ * --------------------------------------------------------
+ */
+
 import Link from "next/link";
 import { FiChevronDown, FiChevronRight } from "react-icons/fi";
 import {
@@ -11,6 +21,7 @@ import {
 } from "react-icons/pi";
 import AnimatedUnderline from "./AnimatedUnderline";
 
+// Navigation links for the footer
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Gemstones", href: "/gemstones" },
@@ -20,6 +31,7 @@ const navLinks = [
   { name: "Contact", href: "/contact" },
 ];
 
+// Explore section links
 const exploreLinks = [
   { name: "Gemstones", href: "/gemstones" },
   { name: "Jewellery", href: "/jewellery" },
@@ -27,6 +39,7 @@ const exploreLinks = [
   { name: "Services", href: "/services" },
 ];
 
+// Contact section links
 const contactLinks = [
   { name: "Contact Us", href: "/contact" },
   { name: "About Us", href: "/about" },
@@ -34,13 +47,23 @@ const contactLinks = [
   { name: "Privacy Policy", href: "/privacy" },
 ];
 
+/**
+ * Footer
+ *
+ * Renders the main site footer with navigation, contact, newsletter, and social links.
+ *
+ * @returns {JSX.Element} The footer component for the Maedric site.
+ *
+ * @example
+ * <Footer />
+ */
 const Footer = () => (
   <footer className="bg-primary text-neutral pt-12 pb-6">
     <div className="max-w-md sm:max-w-lg md:max-w-full md:w-full lg:max-w-7xl mx-auto px-4">
       <div className="lg:block grid grid-cols-1 md:max-lg:grid-cols-2 md:gap-12 items-end-safe md:max-lg:px-8 ">
-        {/* Upper sections */}
+        {/* Upper sections: About, Explore, Contact, Newsletter */}
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 lg:gap-16 mb-4 md:mb-8">
-          {/* About */}
+          {/* About section: Logo, tagline, and description */}
           <div>
             {/* Logo and Tagline */}
             <div className={`transition-all duration-300 flex flex-col mb-5`}>
@@ -60,7 +83,7 @@ const Footer = () => (
               appreciate true quality and craftsmanship.
             </p>
           </div>
-          {/* Explore */}
+          {/* Explore section: Navigation links */}
           <div className="hidden lg:block">
             <h4 className="font-figtree text-[20px] py-1 ms-2 mb-3 border-b-[0.5px] border-neutral w-fit">
               Explore
@@ -79,7 +102,7 @@ const Footer = () => (
               ))}
             </ul>
           </div>
-          {/* Contact */}
+          {/* Contact section: Contact and policy links */}
           <div className="hidden lg:block">
             <h4 className="font-figtree text-[20px] py-1 ms-2 mb-3 border-b-[0.5px] border-neutral w-fit">
               Contact
@@ -98,7 +121,7 @@ const Footer = () => (
               ))}
             </ul>
           </div>
-          {/* Newsletter */}
+          {/* Newsletter section: Email subscription form */}
           <div>
             <h4 className="font-figtree text-[20px] py-1 mb-5 md:mb-3 border-b-[0.5px] border-neutral w-fit">
               Newsletter
@@ -142,7 +165,7 @@ const Footer = () => (
             </form>
           </div>
         </div>
-        {/* Divider */}
+        {/* Divider for mobile */}
         <div className="md:hidden border-t border-neutral/20 flex mb-5 flex-wrap justify-between items-center" />
         {/* Footer Links For Mobile */}
         <nav className="flex md:max-lg:mb-8 lg:hidden flex-col space-y-4">
@@ -269,12 +292,12 @@ const Footer = () => (
         />
       </div>
 
-      {/* Divider */}
+      {/* Divider for desktop */}
       <div className="hidden lg:block border-t-[0.3px] border-neutral/20 pt-6" />
 
       <div className="bg-primary w-full lg:-mt-4 py-2 text-neutral-100 text-sm">
         <div className="w-full mx-auto flex flex-col lg:flex-row items-center justify-between">
-          {/* Left Section */}
+          {/* Left Section: Language and Currency Dropdowns */}
           <div className="hidden lg:flex items-center space-x-4">
             {/* Language Dropdown */}
             <div className="relative">
@@ -292,7 +315,7 @@ const Footer = () => (
             </div>
           </div>
 
-          {/* Middle Section */}
+          {/* Middle Section: Copyright */}
           <div className="font-figtree text-[8px] md:text-[14px] text-neutral mt-4 lg:mt-0 text-center">
             <span>
               © 2025 Maedric. All rights reserved. Crafted with care, inspired
@@ -300,8 +323,7 @@ const Footer = () => (
             </span>
           </div>
 
-          {/* Right Section */}
-          {/* Social Media Icons For Desktop */}
+          {/* Right Section: Social Media Icons */}
           <div className="hidden lg:flex space-x-4 mt-3 md:mt-0">
             <Link
               href="#"

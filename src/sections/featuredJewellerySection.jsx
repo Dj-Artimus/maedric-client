@@ -1,3 +1,13 @@
+/**
+ * --------------------------------------------------------
+ * ✏️ Author: DjArtimus
+ * 📅 Created: 11-07-2025 - 14-07-2025
+ *
+ * 📌 Description:
+ *   FeaturedJewellerySection displays a carousel of featured jewellery items using Swiper with navigation controls and autoplay functionality.
+ * --------------------------------------------------------
+ */
+
 "use client";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -9,6 +19,10 @@ import { useRef } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import FeaturedJewelleryCard from "../components/FeaturedJewelleryCard";
 
+/**
+ * Array of featured jewellery items with product details.
+ * Each item contains name, image, type, price, and liked status.
+ */
 const featuredJewellery = [
   {
     name: "18k White Gold Ruby Ring",
@@ -47,24 +61,37 @@ const featuredJewellery = [
   },
 ];
 
-// This section displays featured jewellery items with a swiper for navigation.
-// It includes a title, description, and a button to view all items.
+/**
+ * FeaturedJewellerySection
+ *
+ * Renders a carousel of featured jewellery items with Swiper navigation and autoplay.
+ * Includes responsive breakpoints and hover interactions to pause autoplay.
+ *
+ * @returns {JSX.Element} The featured jewellery section with carousel.
+ *
+ * @example
+ * <FeaturedJewellerySection />
+ */
 const FeaturedJewellerySection = () => {
+  // ⚙️ Local variables / hooks
   const swiperRef = useRef(null);
 
   return (
     <section className="bg-[#fff] py-12 md:py-16">
       <div className="max-w-6xl mx-auto px-4">
-        {/* Title */}
+        {/* Section title */}
         <h2 className="font-quiche text-[36px] text-primary text-center">
           Featured Jewellery
         </h2>
-        {/* Description */}
+
+        {/* Section description */}
         <p className="font-figtree text-center text-lg text-gray-600 mb-8 max-w-4xl mx-auto">
-          Discover what everyone’s loving right now — our most popular pieces,
-          handpicked based on what’s trending with Maedric customers this
+          Discover what everyone's loving right now — our most popular pieces,
+          handpicked based on what's trending with Maedric customers this
           season.
         </p>
+
+        {/* View All button */}
         <div className="flex w-full items-center justify-end mb-5">
           <button className="cursor-pointer group flex items-center">
             <span className="font-figtree font-semibold text-[16px] text-primary mx-2">
@@ -77,9 +104,9 @@ const FeaturedJewellerySection = () => {
         </div>
       </div>
 
-      {/* ✅ Swiper */}
+      {/* Swiper carousel container */}
       <div className="relative max-w-6xl xl:max-w-7xl flex justify-center mx-auto px-4">
-        {/* nav buttons */}
+        {/* Previous navigation button */}
         <button
           aria-label="Previous"
           className="featured-prev hover:text-accent p-2"
@@ -87,6 +114,7 @@ const FeaturedJewellerySection = () => {
           <FiChevronLeft className="w-8 h-8 font-semibold" />
         </button>
 
+        {/* Swiper carousel with navigation and autoplay */}
         <Swiper
           modules={[Navigation, Autoplay]}
           spaceBetween={24}
@@ -110,6 +138,7 @@ const FeaturedJewellerySection = () => {
             swiperRef.current = swiper;
           }}
         >
+          {/* Map through featured jewellery items */}
           {featuredJewellery.map((item, i) => (
             <SwiperSlide
               key={i}
@@ -121,6 +150,7 @@ const FeaturedJewellerySection = () => {
           ))}
         </Swiper>
 
+        {/* Next navigation button */}
         <button
           aria-label="Next"
           className="featured-next hover:text-accent p-2"
