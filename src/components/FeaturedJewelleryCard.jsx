@@ -30,13 +30,13 @@ import AnimatedUnderline from "./AnimatedUnderline";
  */
 const FeaturedJewelleryCard = ({ type, img, name, price, liked }) => (
   <div className="bg-white max-w-[302] xl:w-[250px] rounded-[2px] group cursor-pointer flex flex-col mx-auto group">
-    <div className="relative aspect-[3/4] mb-4">
+    <div className="relative aspect-[3/4] mb-4 overflow-hidden">
       {/* Jewellery image */}
       <Image
         src={img}
         alt={name}
         fill
-        className="transition-transform duration-300 group-hover:scale-105"
+        className="transition-transform duration-700 group-hover:scale-110"
         priority
       />
       {/* Like/Unlike heart icon */}

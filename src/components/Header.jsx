@@ -116,10 +116,10 @@ const Header = () => {
     <header className={`w-full sticky top-0 z-50 transition-all duration-300`}>
       {/* Main Navbar */}
       <div
-        className={`w-full sm:absolute top-0 left-0 flex lg:items-center px-6 xl2:px-16 bg-primary/60 backdrop-blur-md drop- shadow-2xl drop-shadow-neutral/20 ${
+        className={`w-full sm:absolute top-0 left-0 flex lg:items-center px-6 xl2:px-16 backdrop-blur-md ${
           isScrolled
-            ? "py-5 sm:py-3 justify-between"
-            : "py-5 sm:py-3 lg:py-6 lg:pb-4 lg:flex-col"
+            ? "py-5 sm:py-3 justify-between bg-primary"
+            : "py-5 sm:py-3 lg:py-6 lg:pb-4 lg:flex-col bg-primary/60"
         } transition-all duration-300`}
       >
         {/* Logo and Tagline */}
@@ -227,7 +227,7 @@ const Header = () => {
 
       {/* Mobile Menu (Full-Screen Overlay) */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 bg-primary/60 z-5 backdrop-blur-3xl drop-shadow-2xl drop-shadow-[#30303066] overflow-y-auto">
+        <div className="fixed inset-0 bg-primary z-5 backdrop-blur-3xl drop-shadow-2xl drop-shadow-[#30303066] overflow-y-auto">
           <div className="relative min-h-[640px] h-full flex flex-col p-16">
             {/* Close Icon */}
             <div className="flex justify-between items-center mb-6">

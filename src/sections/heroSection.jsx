@@ -10,6 +10,7 @@
 
 "use client";
 import SlantedFillButton from "@/components/SlantedFillButton";
+import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 
 /**
@@ -23,6 +24,18 @@ import { FaWhatsapp } from "react-icons/fa";
  * @example
  * <HeroSection />
  */
+
+const handleClick = (e) => {
+  e.preventDefault();
+  const itemID = e.target.getAttribute("itemID");
+  if (itemID.startsWith("#")) {
+    const element = document.querySelector(itemID);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+};
+
 const HeroSection = () => (
   <section className="w-full md:h-[90vh] lg:h-[100vh] bg-primary/60 flex flex-col md:flex-row items-center justify-start relative overflow-hidden">
     {/* Background video */}
@@ -35,21 +48,30 @@ const HeroSection = () => (
       playsInline
       preload="auto"
     />
-    
+
     {/* Hero content container */}
     <div className="sm:absolute bottom-6 left-0 z-10 flex flex-col items-start sm:max-lg2:items-center justify-center text-left px-8 md:px-24 py-6 sm:py-12 w-full">
       {/* Hero text content - Desktop version */}
-      <h1 className="hidden sm:block bgac font-figtree font-medium text-[40px] md:text-[48px] text-white drop-shadow-lg mb-6">
-        Want one of your own?
+      <h1 className="hidden sm:block font-figtree font-medium text-[40px] md:text-[48px] text-white drop-shadow-lg">
+        Your Dream Jewellery, <br /> One Click Away
       </h1>
+      <h2 className="hidden sm:block font-figtree font-medium text-[15px] md:text-[23px] text-white drop-shadow-lg mb-6">
+        Designed by artisans, made for your moments
+      </h2>
       <SlantedFillButton
-        className="relative hidden sm:block backdrop-blur-lg rounded-[2px] border border-white text-white font-figtree font-medium text-[16px] py-3 px-[104px] transition hover:text-primary cursor-pointer hover:backdrop-blur-none "
+        className="relative hidden sm:block backdrop-blur-lg rounded-[2px] border border-white text-white font-figtree font-medium text-[16px] px-[104px] transition hover:text-primary cursor-pointer hover:backdrop-blur-none "
         backgroundColor="transparent"
         fillColor="#d2ae6d"
-        href="#"
-        ariaLabel="Explore Our Collections"
+        href="#featured-jewellery"
+        ariaLabel="Explore Our Featured Jewellery"
       >
-        Explore Our Collections
+        <span
+          className="py-3 inline-block"
+          onClick={handleClick}
+          itemID="#featured-jewellery"
+        >
+          Explore our Featured Jewellery
+        </span>
       </SlantedFillButton>
 
       {/* Hero text content - Mobile version */}
@@ -58,13 +80,21 @@ const HeroSection = () => (
         your legacy with every radiant detail.
       </h1>
       <button
-        className="w-full sm:hidden backdrop-blur-lg rounded-[2px] border border-white text-white font-figtree font-medium text-[16px] py-3 hover:bg-white/10 mb-2 cursor-pointer transition-colors slanted-fill-btn"
+        className="w-full sm:hidden backdrop-blur-lg rounded-[2px] border border-white text-white font-figtree font-medium text-[16px] hover:bg-white/10 mb-2 cursor-pointer transition-colors slanted-fill-btn"
         style={{
           "--bg-color": "transparent",
           "--fill-color": "#d2ae6d",
         }}
       >
-        <span>Explore All Collections</span>
+        <Link
+          href="#featured-jewellery"
+          aria-label="Explore Our Featured Jewellery"
+          className="py-3 inline-block"
+          onClick={handleClick}
+          itemID="#featured-jewellery"
+        >
+          Explore our Featured Jewellery
+        </Link>
       </button>
     </div>
 

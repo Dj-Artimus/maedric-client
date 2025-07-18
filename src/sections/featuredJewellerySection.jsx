@@ -77,7 +77,7 @@ const FeaturedJewellerySection = () => {
   const swiperRef = useRef(null);
 
   return (
-    <section className="bg-[#fff] py-12 md:py-16">
+    <section className="bg-[#fff] py-12 md:py-16" id="featured-jewellery">
       <div className="max-w-6xl mx-auto px-4">
         {/* Section title */}
         <h2 className="font-quiche text-[36px] text-primary text-center">
@@ -109,7 +109,7 @@ const FeaturedJewellerySection = () => {
         {/* Previous navigation button */}
         <button
           aria-label="Previous"
-          className="featured-prev hover:text-accent p-2"
+          className="featured-prev hover:text-accent p-1 border rounded-[1px] max-h-[404px] xl:max-h-[334px]"
         >
           <FiChevronLeft className="w-8 h-8 font-semibold" />
         </button>
@@ -153,7 +153,7 @@ const FeaturedJewellerySection = () => {
         {/* Next navigation button */}
         <button
           aria-label="Next"
-          className="featured-next hover:text-accent p-2"
+          className="featured-next hover:text-accent p-1 border rounded-[1px] max-h-[404px] xl:max-h-[334px]"
         >
           <FiChevronRight className="w-8 h-8 font-semibold" />
         </button>
