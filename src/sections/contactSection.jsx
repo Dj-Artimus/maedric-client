@@ -41,32 +41,23 @@ const ContactSection = () => (
 
         {/* Category selection tabs */}
         <div className="max-w-3xl mx-auto flex justify-center gap-2 md:gap-4 text-primary">
-          <button
-            className="font-figtree text-[16px] border border-primary rounded-[1px] w-full py-2 hover:text-white cursor-pointer slanted-fill-btn"
-            style={{
-              "--bg-color": "white",
-              "--fill-color": "#051e33",
-            }}
-          >
-            <span>Bridal</span>
+          <button className="relative font-figtree text-[16px] border border-primary rounded-[1px] w-full py-2 cursor-pointer overflow-hidden group">
+            <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+              Bridal
+            </span>
+            <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0 h-0 opacity-0 bg-primary rotate-0 transition-all duration-1000 ease-in-out group-hover:w-[200%] group-hover:h-[1000%] group-hover:opacity-100 group-hover:rotate-90 z-0" />
           </button>
-          <button
-            className="font-figtree text-[16px] border border-primary rounded-[1px] w-full py-2 hover:text-white cursor-pointer slanted-fill-btn"
-            style={{
-              "--bg-color": "white",
-              "--fill-color": "#051e33",
-            }}
-          >
-            <span>Boutique</span>
+          <button className="relative font-figtree text-[16px] border border-primary rounded-[1px] w-full py-2 cursor-pointer overflow-hidden group">
+            <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+              Boutique
+            </span>
+            <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0 h-0 opacity-0 bg-primary rotate-0 transition-all duration-1000 ease-in-out group-hover:w-[200%] group-hover:h-[1000%] group-hover:opacity-100 group-hover:rotate-90 z-0" />
           </button>
-          <button
-            className="font-figtree text-[16px] border border-primary rounded-[1px] w-full py-2 hover:text-white cursor-pointer slanted-fill-btn"
-            style={{
-              "--bg-color": "white",
-              "--fill-color": "#051e33",
-            }}
-          >
-            <span>Gemstone</span>
+          <button className="relative font-figtree text-[16px] border border-primary rounded-[1px] w-full py-2 cursor-pointer overflow-hidden group">
+            <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+              Gemstone
+            </span>
+            <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0 h-0 opacity-0 bg-primary rotate-0 transition-all duration-1000 ease-in-out group-hover:w-[200%] group-hover:h-[1000%] group-hover:opacity-100 group-hover:rotate-90 z-0" />
           </button>
         </div>
       </div>

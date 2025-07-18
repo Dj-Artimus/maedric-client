@@ -48,7 +48,7 @@ const SlantedFillButton = ({
 
   return (
     <div
-      className="slanted-fill-btn w-fit h-fit relative overflow-hidden bg"
+      className="slanted-fill-btn w-fit h-fit relative overflow-hidden"
       style={{
         ...styleVars,
       }}

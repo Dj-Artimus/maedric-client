@@ -36,7 +36,7 @@ const FeaturedJewelleryCard = ({ type, img, name, price, liked }) => (
         src={img}
         alt={name}
         fill
-        className="transition-transform duration-700 group-hover:scale-110"
+        className="transition-transform duration-700 object-cover"
         priority
       />
       {/* Like/Unlike heart icon */}

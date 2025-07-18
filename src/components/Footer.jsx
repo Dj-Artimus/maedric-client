@@ -20,6 +20,7 @@ import {
   PiYoutubeLogoFill,
 } from "react-icons/pi";
 import AnimatedUnderline from "./AnimatedUnderline";
+import SpinFillButton from "./SpinFillButton";
 
 // Navigation links for the footer
 const navLinks = [
@@ -134,34 +135,32 @@ const Footer = () => (
               <input
                 type="email"
                 placeholder="sarah@yahoomail.com"
-                className="w-full px-3 py-2 lg:py-1 font-figtree border border-neutral/50 rounded-[1px] placeholder-neutral/50 focus:outline-none focus:ring-2 focus:ring-accent"
+                className="w-full px-3 py-2 lg:py-1 mb-3 font-figtree border border-neutral/50 rounded-[1px] placeholder-neutral/50 focus:outline-none focus:ring-2 focus:ring-accent"
               />
-              <button
+
+              <SpinFillButton
                 type="submit"
-                className="md:hidden w-full text-primary text-[12px] font-figtree px-4 py-2 mt-3 rounded-[1px] transition-colors duration-200 flex items-center justify-center border-[0.5px] border-neutral/80 slanted-fill-btn"
-                style={{
-                  "--bg-color": "#e7eaee",
-                  "--fill-color": "#d2ae6d",
-                }}
+                className="md:hidden w-full text-primary text-[12px] font-figtree px-4 py-2 rounded-[1px] transition-colors duration-200 flex items-center justify-center border-[0.5px] border-neutral/80 relative bg-neutral cursor-pointer overflow-hidden group"
+                backgroundColor="neutral"
+                fillColor="accent"
+              >
+                <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+                  Subscribe
+                  <FiChevronRight className="inline-block w-4 h-4 ms-[2px]" />
+                </span>
+              </SpinFillButton>
+
+              <SpinFillButton
+                type="submit"
+                className="hidden md:flex w-full lg:w-fit text-neutral hover:text-primary text-[12px] md:max-lg:text-[16px] font-figtree px-4 py-2 lg:py-1 rounded-[1px] transition-colors duration-200 items-center justify-center border-[0.5px] border-neutral/80"
+                backgroundColor="transparent"
+                fillColor="accent"
               >
                 <span>
                   Subscribe
                   <FiChevronRight className="inline-block w-4 h-4 ms-[2px]" />
                 </span>
-              </button>
-              <button
-                type="submit"
-                className="hidden md:flex w-full lg:w-fit text-neutral hover:text-primary text-[12px] md:max-lg:text-[16px] font-figtree px-4 py-2 lg:py-1 mt-3 rounded-[1px] transition-colors duration-200 items-center justify-center border-[0.5px] border-neutral/80 slanted-fill-btn"
-                style={{
-                  "--bg-color": "transparent",
-                  "--fill-color": "#d2ae6d",
-                }}
-              >
-                <span>
-                  Subscribe
-                  <FiChevronRight className="inline-block w-4 h-4 ms-[2px]" />
-                </span>
-              </button>
+              </SpinFillButton>
             </form>
           </div>
         </div>
@@ -174,13 +173,10 @@ const Footer = () => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="font-figtree font-semibold text-center text-[16px] text-[#303030] px-4 py-2 rounded-[2px] slanted-fill-btn"
-                style={{
-                  "--bg-color": "#d2ae6d",
-                  "--fill-color": "#e7eaee",
-                }}
+                className="font-figtree font-semibold text-center text-[16px] text-[#303030] px-4 py-2 rounded-[2px] relative inline-block cursor-pointer overflow-hidden group bg-accent"
               >
-                <span>{link.name}</span>
+                <span className="relative z-10 group-hover:text-[#303030] transition-colors duration-300">{link.name}</span>
+                <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0 h-0 opacity-0 bg-neutral rotate-0 transition-all duration-700 ease-in-out group-hover:w-[200%] group-hover:h-[1600%] group-hover:opacity-100 group-hover:rotate-90 z-0" />
               </Link>
             ) : (
               <div

@@ -8,7 +8,7 @@
  * --------------------------------------------------------
  */
 
-import SlantedFillButton from "@/components/SlantedFillButton";
+import SpinFillButton from "@/components/SpinFillButton";
 import Image from "next/image";
 
 /**
@@ -61,22 +61,22 @@ const CustomOrderCTASection = () => {
 
           {/* CTA Buttons */}
           <div className="w-full mx-auto flex gap-4 flex-row justify-center mt-6">
-            <SlantedFillButton
+            <SpinFillButton
               className="px-6 py-3 text-[12px] lg:text-[16px] border text-white border-white hover:text-primary rounded-[2px] transition-all duration-300 text-center"
               backgroundColor="transparent"
-              fillColor="#d2ae6d"
+              fillColor="accent"
               href="#"
             >
-              <span>Request A Quote!</span>
-            </SlantedFillButton>
-            <SlantedFillButton
+              Request A Quote!
+            </SpinFillButton>
+            <SpinFillButton
               className="px-6 py-3 text-[12px] lg:text-[16px] border text-white border-white hover:text-primary rounded-[2px] transition-all duration-300 text-center"
               backgroundColor="transparent"
-              fillColor="#d2ae6d"
+              fillColor="accent"
               href="#"
             >
-              <span>Discover Our Legacy!</span>
-            </SlantedFillButton>
+              Discover Our Legacy!
+            </SpinFillButton>
           </div>
         </div>
       </div>

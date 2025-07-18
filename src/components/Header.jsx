@@ -20,7 +20,7 @@ import { LuShoppingCart } from "react-icons/lu";
 import { RiInstagramFill } from "react-icons/ri";
 import { SiTiktok } from "react-icons/si";
 import AnimatedUnderline from "./AnimatedUnderline";
-import SlantedFillButton from "./SlantedFillButton";
+import SpinFillButton from "./SpinFillButton";
 
 // Navigation links for the header
 const navLinks = [
@@ -154,15 +154,15 @@ const Header = () => {
         >
           {navLinks.map((link) =>
             link.name === "Contact" ? (
-              <SlantedFillButton
+              <SpinFillButton
                 key={link.name}
-                className="font-figtree  font-bold text-[16px] text-[#303030] px-8 py-2 rounded-[2px] cursor-pointer -z-10"
-                backgroundColor="#d2ae6d"
-                fillColor="#e7eaee"
+                className="font-figtree font-bold text-[16px] text-[#303030] px-8 py-2 rounded-[2px] cursor-pointer"
+                backgroundColor="accent"
+                fillColor="neutral"
                 href={link.href}
               >
-                <span>{link.name}</span>
-              </SlantedFillButton>
+                {link.name}
+              </SpinFillButton>
             ) : (
               <Link
                 key={link.name}
@@ -258,13 +258,12 @@ const Header = () => {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="font-figtree font-semibold text-center text-[16px] text-[#303030] px-4 py-2 rounded-[2px] slanted-fill-btn"
-                    style={{
-                      "--bg-color": "#d2ae6d",
-                      "--fill-color": "#e7eaee",
-                    }}
+                    className="font-figtree font-semibold text-center text-[16px] text-[#303030] px-4 py-2 rounded-[2px] relative inline-block cursor-pointer overflow-hidden group bg-accent"
                   >
-                    <span>{link.name}</span>
+                    <span className="relative z-10 group-hover:text-[#303030] transition-colors duration-300">
+                      {link.name}
+                    </span>
+                    <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0 h-0 opacity-0 bg-neutral rotate-0 transition-all duration-700 ease-in-out group-hover:w-[200%] group-hover:h-[1900%] group-hover:opacity-100 group-hover:rotate-90 z-0" />
                   </Link>
                 ) : (
                   <div

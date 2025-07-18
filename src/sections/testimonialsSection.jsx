@@ -61,7 +61,7 @@ const TestimonialsSection = () => {
         <h2 className="font-quiche text-neutral md:text-primary text-[24px] md:text-[36px] mb-2 text-center">
           Client Testimonials
         </h2>
-        
+
         {/* Section description */}
         <p className="font-figtree text-neutral md:text-secondary text-[18px] md:text-[20px] text-center mb-10">
           Real stories from those who wear Maedric with pride.
@@ -72,7 +72,7 @@ const TestimonialsSection = () => {
           {/* Custom Previous Button */}
           <button
             aria-label="Previous"
-            className="testimonial-prev md:text-primary hover:text-accent p-2 transition-colors duration-200 translate-y-44 md:translate-y-0"
+            className="testimonial-prev md:text-primary hover:text-accent transition-colors duration-200 translate-y-44 md:translate-y-0 border border-secondary rounded-[1px] min-h-[334px] me-2"
           >
             <FiChevronLeft className="w-9 h-9" />
           </button>
@@ -90,7 +90,7 @@ const TestimonialsSection = () => {
             {/* Map through testimonials */}
             {testimonials.map((item, idx) => (
               <SwiperSlide key={idx}>
-                <div className="flex flex-col md:flex-row items-center justify-center lg:gap-4 xl:gap-12 group">
+                <div className="flex flex-col md:flex-row items-center justify-center lg:gap-4 xl:gap-12 group mx-2">
                   {/* Client photo container */}
                   <div className="relative md:w-[400px] lg:w-[500px]">
                     {/* Client image */}
@@ -134,7 +134,7 @@ const TestimonialsSection = () => {
           {/* Custom Next Button */}
           <button
             aria-label="Next"
-            className="testimonial-next md:text-primary hover:text-accent p-2 transition-colors duration-200 translate-y-44 md:translate-y-0"
+            className="testimonial-next md:text-primary hover:text-accent transition-colors duration-200 translate-y-44 md:translate-y-0 border border-secondary rounded-[1px] min-h-[334px] ms-2"
           >
             <FiChevronRight className="w-9 h-9" />
           </button>

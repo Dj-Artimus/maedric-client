@@ -8,7 +8,7 @@
  * --------------------------------------------------------
  */
 
-import SlantedFillButton from "@/components/SlantedFillButton";
+import SpinFillButton from "@/components/SpinFillButton";
 import Image from "next/image";
 
 /**
@@ -52,19 +52,19 @@ const InfoBannersSection = () => (
         {banners.map((banner) => (
           <div
             key={banner.title}
-            className="relative flex-1 min-h-[246px] md:min-h-[320px] lg2:min-h-[418px] rounded-[2px] overflow-hidden group shadow-md"
+            className="relative flex-1 min-h-[246px] md:min-h-[320px] lg2:min-h-[418px] rounded-[2px] overflow-hidden group/card shadow-md"
           >
             {/* Background image with hover effect */}
             <Image
               src={banner.img}
               alt={banner.alt}
               fill
-              className="object-cover object-center w-full h-full transition-transform duration-500 group-hover:scale-105 sca"
+              className="object-cover object-center w-full h-full transition-transform duration-500 group-hover/card:scale-105 sca"
               priority
             />
 
             {/* Overlay with hover effect */}
-            <div className="absolute inset-0 bg-[#fff]/40 md:bg-[#fff]/30 group-hover:bg-[#fff]/20 transition-colors duration-200" />
+            <div className="absolute inset-0 bg-[#fff]/40 md:bg-[#fff]/30 group-hover/card:bg-[#fff]/20 transition-colors duration-200" />
 
             {/* Content container */}
             <div className="relative z-10 flex flex-col justify-between min-h-[246px] md:min-h-[320px] lg2:min-h-[418px] px-6 py-8 md:px-8">
@@ -74,16 +74,16 @@ const InfoBannersSection = () => (
               </h3>
 
               {/* Call-to-action button */}
-              <SlantedFillButton
+              <SpinFillButton
                 className="inline-block w-fit font-figtree font-semibold text-[12px] md:text-[16px] text-primary border border-primary rounded-[2px] px-6 py-2"
                 backgroundColor="transparent"
-                fillColor="#d2ae6d"
+                fillColor="accent"
                 tabIndex={0}
                 href={banner.href}
                 ariaLabel={banner.button}
               >
-                <span>{banner.button}</span>
-              </SlantedFillButton>
+                {banner.button}
+              </SpinFillButton>
             </div>
           </div>
         ))}

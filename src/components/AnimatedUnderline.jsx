@@ -53,7 +53,7 @@ const AnimatedUnderline = ({ children, underlineColor = "primary" }) => {
         relative inline-block tracking-wide
         after:absolute after:bottom-[-3] after:right-0 after:h-[2px] after:w-0
         ${getUnderlineClass(underlineColor)} after:block after:content-['']
-        after:transition-all after:duration-500 after:ease-in
+        after:transition-all after:duration-200 after:ease-in
         group-hover:after:left-0 group-hover:after:right-auto group-hover:after:w-full
       `}
     >

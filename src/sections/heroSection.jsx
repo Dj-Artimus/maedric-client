@@ -10,6 +10,7 @@
 
 "use client";
 import SlantedFillButton from "@/components/SlantedFillButton";
+import SpinFillButton from "@/components/SpinFillButton";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -58,10 +59,10 @@ const HeroSection = () => (
       <h2 className="hidden sm:block font-figtree font-medium text-[15px] md:text-[23px] text-white drop-shadow-lg mb-6">
         Designed by artisans, made for your moments
       </h2>
-      <SlantedFillButton
-        className="relative hidden sm:block backdrop-blur-lg rounded-[2px] border border-white text-white font-figtree font-medium text-[16px] px-[104px] transition hover:text-primary cursor-pointer hover:backdrop-blur-none "
+      <SpinFillButton
+        className="relative hidden sm:block backdrop-blur-lg rounded-[2px] border border-white text-white font-figtree font-medium text-[16px] px-[104px] hover:text-primary cursor-pointer hover:backdrop-blur-none "
         backgroundColor="transparent"
-        fillColor="#d2ae6d"
+        fillColor="accent"
         href="#featured-jewellery"
         ariaLabel="Explore Our Featured Jewellery"
       >
@@ -72,7 +73,7 @@ const HeroSection = () => (
         >
           Explore our Featured Jewellery
         </span>
-      </SlantedFillButton>
+      </SpinFillButton>
 
       {/* Hero text content - Mobile version */}
       <h1 className="sm:hidden font-figtree font-medium text-[14px] text-white text-center drop-shadow-lg mb-6">
@@ -80,21 +81,19 @@ const HeroSection = () => (
         your legacy with every radiant detail.
       </h1>
       <button
-        className="w-full sm:hidden backdrop-blur-lg rounded-[2px] border border-white text-white font-figtree font-medium text-[16px] hover:bg-white/10 mb-2 cursor-pointer transition-colors slanted-fill-btn"
-        style={{
-          "--bg-color": "transparent",
-          "--fill-color": "#d2ae6d",
-        }}
+        className="w-full sm:hidden backdrop-blur-lg rounded-[2px] border border-white text-white font-figtree font-medium text-[16px] hover:bg-white/10 mb-2 transition-colors cursor-pointer overflow-hidden group"
+
       >
         <Link
           href="#featured-jewellery"
           aria-label="Explore Our Featured Jewellery"
-          className="py-3 inline-block"
+          className="py-3 inline-block relative z-10"
           onClick={handleClick}
           itemID="#featured-jewellery"
         >
           Explore our Featured Jewellery
         </Link>
+        <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0 h-0 opacity-0 bg-accent rotate-0 transition-all duration-700 ease-in-out group-hover:w-[200%] group-hover:h-[1600%] group-hover:opacity-100 group-hover:rotate-90 z-0" />
       </button>
     </div>
 

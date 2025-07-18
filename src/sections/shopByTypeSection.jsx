@@ -9,7 +9,7 @@
  */
 
 "use client";
-import AnimatedUnderlineLoop from "@/components/AnimatedUnderlineLoop";
+import AnimatedUnderline from "@/components/AnimatedUnderline";
 import Image from "next/image";
 
 /**
@@ -94,9 +94,9 @@ const ShopByTypeSection = () => {
 
               {/* Type name with animated underline */}
               <span className="font-figtree text-secondary text-[14px] xsm:text-[16px] sm:text-[20px] font-semibold md:mt-2">
-                <AnimatedUnderlineLoop href="#" underlineColor="accent">
+                <AnimatedUnderline href="#" underlineColor="accent">
                   {type.name}
-                </AnimatedUnderlineLoop>
+                </AnimatedUnderline>
               </span>
             </div>
           ))}
